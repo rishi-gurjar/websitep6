@@ -1,3 +1,14 @@
 h1 {
     font-family: Helvetica;
+    padding: 14px 16px;
+}
+p {
+    font-family: Helvetica;
+    font-size: 30px;
+    padding: 14px 16px;
+}
+
+b {
+    font-family: Helvetica;
+    padding: 14px 16px;
 }
