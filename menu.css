@@ -1,0 +1,42 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Helvetica;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+body {
+  background: whitesmoke
+}
+
+h1 {
+  font-family: Helvetica;
+  padding: 14px 16px;
+}
+p {
+  font-family: Helvetica;
+  font-size: 30px;
+  padding: 14px 16px;
+}
+
+b {
+  font-family: Helvetica;
+  padding: 14px 16px;
+}
