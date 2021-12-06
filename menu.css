@@ -30,7 +30,9 @@ a {
 }
 h2 {
   font-family: Arial;
+  text-align: center;
 }
 p {
-  font-family: Arial
+  font-family: Arial;
+  text-align: center;
 }
