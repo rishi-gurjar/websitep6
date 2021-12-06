@@ -39,3 +39,6 @@ p {
 h1 {
   font-family: Arial;
 }
+.active {
+  background-color: #00c3ff;
+}
