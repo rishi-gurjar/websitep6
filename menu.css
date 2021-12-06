@@ -25,3 +25,12 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
+a {
+  font-family: Arial;
+}
+h2 {
+  font-family: Arial;
+}
+p {
+  font-family: Arial
+}
