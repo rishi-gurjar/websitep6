@@ -73,3 +73,8 @@ h5 {
   color: white;
   font-family: Helvetica;
 }
+#grad1 {
+  height: 200px;
+  background-color: red;
+  background-image: linear-gradient(to right, rgb(0, 204, 255) , rgb(81, 255, 0));
+}
