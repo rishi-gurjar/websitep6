@@ -78,3 +78,6 @@ h5 {
   background-color: red;
   background-image: linear-gradient(to right, rgb(0, 204, 255) , rgb(81, 255, 0));
 }
+iframe {
+  border-radius: 20px;
+}
