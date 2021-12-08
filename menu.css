@@ -3,7 +3,6 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(255, 255, 255);
 }
 
 li {
@@ -17,15 +16,11 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
-li a:hover:not(.active) {
-  background-color: rgb(255, 255, 255);
-}
-
 a {
   font-family: Machina;
   font-size: 30px;
 }
+
 h2 {
   font-family: Machina;
   text-align: center;
@@ -45,8 +40,8 @@ marquee {
   font-size: 20px;
 }
 h4 {
-  font-size: 20px;
-  font-family: Helvetica;
+  font-size: 35px;
+  font-family: Machina;
   font-weight: 400;
   text-align: center;
 }
@@ -73,4 +68,8 @@ h5 {
   margin: auto;
   width: 60%;
   padding: 10px;
+}
+.white {
+  color: white;
+  font-family: Helvetica;
 }
