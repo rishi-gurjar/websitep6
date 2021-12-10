@@ -6,7 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportsHub— Top Ten</title>
     <link rel="stylesheet" href="menu.css">
-    
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto;
+          padding: 10px;
+        }
+        .grid-item {
+          font-family: Courier New;
+          padding: 20px;
+          font-size: 30px;
+          font-weight: 3000px;
+          text-align: center;
+        }
+        </style>
+        <script type="text/javascript">
+            function changeText(text)
+                {
+                    var display = document.getElementById('text-display');
+                    display.innerHTML = "";
+                    display.innerHTML = text;
+                }
+                  function changeback(text)
+                {
+                    var display = document.getElementById('text-display');
+                    display.innerHTML = "";
+                    display.innerHTML = text;
+                }
+            </script>
 </head>
 <body style = "background: rgb(255, 116, 186);">
     <ul>
@@ -18,6 +45,54 @@
 
       </ul>
 
-      <h1>Top Ten</h1>
+      
+      <h1>Basketball</h1>
+      <div class="grid-container">
+        <div class="grid-item">Michael Jordan</div>
+        <div class="grid-item">Lebron James</div>
+        <div class="grid-item">Kareem Abdul-Jabbar</div>  
+        <div class="grid-item">Magic Johnson</div>
+        <div class="grid-item">Kobe Bryant</div>
+        <div class="grid-item">Shaquille O'Neal</div>  
+        <div class="grid-item">Larry Bird</div>
+        <div class="grid-item">Wilt Chamberlain</div>
+        <div class="grid-item">Bill Russell</div>
+        <div class="grid-item">Tim Duncan</div>
+      </div>
+
+      <h1>Football</h1>
+      <div class="grid-container">
+        <div class="grid-item">Michael Jordan</div>
+        <div class="grid-item">Lebron James</div>
+        <div class="grid-item">Kareem Abdul-Jabbar</div>  
+        <div class="grid-item">Magic Johnson</div>
+        <div class="grid-item">Kobe Bryant</div>
+        <div class="grid-item">Shaquille O'Neal</div>  
+        <div class="grid-item">Larry Bird</div>
+        <div class="grid-item">Wilt Chamberlain</div>
+        <div class="grid-item">Bill Russell</div>
+        <div class="grid-item">Tim Duncan</div>
+      </div>
+
+      <h1>Soccer</h1>
+      <div class="grid-container">
+        <div class="grid-item">Michael Jordan</div>
+        <div class="grid-item">Lebron James</div>
+        <div class="grid-item">Kareem Abdul-Jabbar</div>  
+        <div class="grid-item">Magic Johnson</div>
+        <div class="grid-item">Kobe Bryant</div>
+        <div class="grid-item">Shaquille O'Neal</div>  
+        <div class="grid-item">Larry Bird</div>
+        <div class="grid-item">Wilt Chamberlain</div>
+        <div class="grid-item">Bill Russell</div>
+        <div class="grid-item">Tim Duncan</div>
+      </div>
+    
+      
 </body>
+
 </html>
+
+<div class="grid-container" onmouseover="changeText('Made by Rishi and Jeeva')" onmouseout="changeback('hi')" >
+
+    <div id="text-display">hi </div>
