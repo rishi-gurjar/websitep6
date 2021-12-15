@@ -19,21 +19,7 @@
           font-weight: 3000px;
           text-align: center;
         }
-        </style>
-        <script type="text/javascript">
-            function changeText(text)
-                {
-                    var display = document.getElementById('text-display');
-                    display.innerHTML = "";
-                    display.innerHTML = text;
-                }
-                  function changeback(text)
-                {
-                    var display = document.getElementById('text-display');
-                    display.innerHTML = "";
-                    display.innerHTML = text;
-                }
-            </script>
+    </style>
 </head>
 <body style = "background: rgb(255, 116, 186);">
     <ul>
@@ -88,11 +74,18 @@
         <div class="grid-item">Tim Duncan</div>
       </div>
     
-      
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img_avatar.png" alt="Avatar" style="width:300px;height:300px;">
+          </div>
+          <div class="flip-card-back">
+            <h1>John Doe</h1> 
+            <p>Architect & Engineer</p> 
+            <p>We love that guy</p>
+          </div>
+        </div>
+      </div>
 </body>
 
 </html>
-
-<div class="grid-container" onmouseover="changeText('Made by Rishi and Jeeva')" onmouseout="changeback('hi')" >
-
-    <div id="text-display">hi </div>
