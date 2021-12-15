@@ -138,5 +138,8 @@ iframe {
 }
 img {
   border-radius: 15px;
+  align-self: center;
+  object-fit: cover;
+
 
 }
