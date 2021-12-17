@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportsHub— Stats</title>
     <link rel="stylesheet" href="static\css\menu.css">
+    <link rel="stylesheet" href="static\css\data.css">
 </head>
 <body style = "background: rgb(170, 255, 100);">
     <ul>
@@ -15,6 +16,35 @@
         <li><a href="top">Top Players</a></li>
         <li style="float:right"><a class="active" href="about">About</a></li>
       </ul>
+      <h2>My Phonebook</h2>
 
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for leagues..." title="Type in a name">
+      
+      <ul id="myUL">
+        <li><a href="https://www.nba.com/">NBA</a></li>
+        <li><a href="https://www.nfl.com/">NFL</a></li>
+      
+        <li><a href="https://www.premierleague.com/">Premier League</a></li>
+        <li><a href="https://www.laliga.com/en-US">La Liga</a></li>
+      </ul>
+      
+      <script>
+      function myFunction() {
+          var input, filter, ul, li, a, i, txtValue;
+          input = document.getElementById("myInput");
+          filter = input.value.toUpperCase();
+          ul = document.getElementById("myUL");
+          li = ul.getElementsByTagName("li");
+          for (i = 0; i < li.length; i++) {
+              a = li[i].getElementsByTagName("a")[0];
+              txtValue = a.textContent || a.innerText;
+              if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  li[i].style.display = "";
+              } else {
+                  li[i].style.display = "none";
+              }
+          }
+      }
+      </script>
 </body>
 </html>
