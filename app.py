@@ -26,3 +26,7 @@ def sports():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+# pip install Flask
+# py app.py
