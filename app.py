@@ -30,3 +30,7 @@ if __name__ == "__main__":
 
 # pip install Flask
 # py app.py
+ # https://www.educative.io/edpresso/how-to-add-data-to-databases-in-flask
+ # "database search flask"
+ # https://www.w3schools.com/css/tryit.asp?filename=trycss_forms
+ 
