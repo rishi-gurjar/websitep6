@@ -3,7 +3,7 @@
   }
   
   #myInput {
-    background-image: url('static/icons/search-interface-symbol.png');
+    background-image: url('/static/icons/search-interface-symbol.png');
     background-position: 10px 12px;
     background-repeat: no-repeat;
     width: 100%;

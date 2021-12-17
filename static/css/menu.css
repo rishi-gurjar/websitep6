@@ -16,6 +16,10 @@ li a {
   padding: 14px 16px;
   text-decoration: none;
 }
+@font-face {
+  font-family: Machina;
+  src: url(/static/fonts/NeueMachina-Regular.otf);
+}
 a {
   font-family: Machina;
   font-size: 30px;
@@ -56,10 +60,7 @@ h5 {
   margin-left: auto;
   margin-right: auto;
 }
-@font-face {
-  font-family: Machina;
-  src: url(fonts\Neue-Machina\NeueMachina-Regular.otf);
-}
+
 
 .textcenter {
   text-align: center;
