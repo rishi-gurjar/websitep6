@@ -23,6 +23,12 @@ li a {
 a {
   font-family: Machina;
   font-size: 30px;
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
 }
 
 h2 {
@@ -141,4 +147,17 @@ img {
   border-radius: 15px;
   align-self: center;
   object-fit: cover;
+}
+.ml4 {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5em;
+}
+.ml4 .letters {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0.3em;
+  right: 0;
+  opacity: 0; 
 }
