@@ -1,3 +1,18 @@
+/* DATABASE CREATION IN COMMAND LINE 
+cd c:\xampp\htdocs 
+dir *.html
+del *.html
+mkdir websitep6
+cd websitep6
+
+ MYSQL 
+mysql -u root
+GRANT ALL PRIVILEGES ON *.* TO 'db_user'@'localhost' IDENTIFIED BY 'P@s$w0rd123!';
+\q
+mysql -u db_user -p
+CREATE DATABASE db_name; */
+
+
 
 /* CHUNK 1: RUN— CREATE DB AND COLUMNS */ 
 CREATE TABLE LeagueSearch ( id int(11) NOT NULL AUTO_INCREMENT, 
