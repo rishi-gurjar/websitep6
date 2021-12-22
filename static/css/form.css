@@ -17,7 +17,7 @@ body {
 form {
   background: var(--white);
   padding: 3em;
-  height: 320px;
+  height: 120px;
   border-radius: 20px;
   border-left: 1px solid var(--white);
   border-top: 1px solid var(--white);
@@ -148,13 +148,16 @@ ul {
    }
    #searchword{
     text-align:left; margin-top:20px; display:none;
-    font-family:Machina;
+    font-family:Helvetica;
     font-size:16px;
     color:#000;
+    font-size: 20px;
    }
    .searchword{
     font-weight:bold;
-    color:#fe6f41;
+    font-family: Helvetica;
+    color:#000000;
+    font-size: 20px;
    }
    ol.update li{ border-bottom:#dedede dashed 1px; text-align:center;padding-top:10px;padding-bottom:10px;}
    ol.update li:first-child{ border-top:#dedede dashed 1px; text-align:center}
@@ -167,4 +170,23 @@ ul {
 }
 .below {
   position: absolute;
+}
+.holder {
+  background: var(--white);
+  padding: 3em;
+  height: 120px;
+  border-radius: 20px;
+  border-left: 1px solid var(--white);
+  border-top: 1px solid var(--white);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0,0,0,0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+.cont-holder {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
 }
