@@ -1,6 +1,20 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, request, jsonify
+import pymysql
+pymysql.install_as_MySQLdb()
+import MySQLdb
+db = MySQLdb.connect(host= "localhost", user="root", passwd="Samahita0")
+from flask_mysqldb import MySQL
 
 app = Flask(__name__)
+
+app.secret_key = "caircocoders-ednalan"
+        
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'Samahita0'
+app.config['MYSQL_DB'] = 'testingdb'
+app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
+mysql = MySQL(app)
 
 @app.route('/')
 def home():
@@ -10,7 +24,7 @@ def home():
 def top():
     return render_template("top.html")
 
-@app.route('/about')
+@app.route('/about') 
 def about():
     return render_template("about.html")
 
@@ -22,37 +36,20 @@ def stats():
 def sports():
     return render_template("sports.html")
 
-# Database connection info. Note that this is not a secure connection.
-#app.config['MYSQL_DATABASE_USER'] = 'root'
-#app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
-#app.config['MYSQL_DATABASE_DB'] = 'LibraryDB'
-#app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-
-#mysql = MySQL()
-#mysql.init_app(app)
-#conn = mysql.connect()
-#cursor = conn.cursor()
-
-#endpoint for search
-#@app.route('/search', methods=['GET', 'POST'])
-#def search():
-    if request.method == "POST":
-        book = request.form['book']
-        # search by author or book
-        cursor.execute("SELECT name, author from Book WHERE name LIKE %s OR author LIKE %s", (book, book))
-        conn.commit()
-        data = cursor.fetchall()
-        # all in the search box will return all the tuples
-        if len(data) == 0 and book == 'all': 
-            cursor.execute("SELECT name, author from Book")
-            conn.commit()
-            data = cursor.fetchall()
-        return render_template('search.html', data=data)
-    return render_template('search.html')
-
+@app.route("/searchdata",methods=["POST","GET"])
+def searchdata():
+    if request.method == 'POST':
+        search_word = request.form['search_word']
+        print(search_word)
+        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        query = "SELECT * from LeagueSearch WHERE League LIKE '%{}%' ORDER BY id DESC LIMIT 20".format(search_word)
+        cur.execute(query)
+        programming = cur.fetchall()
+    return jsonify({'data': render_template('response.html', programming=programming)})
 
 if __name__ == "__main__":
     app.run(debug=True)
+    app.run(host='0.0.0.0')
 
 
 
@@ -61,10 +58,5 @@ if __name__ == "__main__":
 # OR FLASK_APP=app.py flask run
 
 # export FLASK_APP=app  
-# flask run
 
-# python3 app.py
- # https://www.educative.io/edpresso/how-to-add-data-to-databases-in-flask
- # "database search flask"
- # https://www.w3schools.com/css/tryit.asp?filename=trycss_forms
- 
+# flask run

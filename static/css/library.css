@@ -32,3 +32,6 @@ body {
     clear: both;
     display: table;
   }
+  form {
+    display: inline-block;
+}
