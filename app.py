@@ -1,18 +1,6 @@
 from flask import Flask, render_template, request
-from flask_mysqldb import MySQL
-import yaml
-import sqlite3
 
 app = Flask(__name__)
-
-#configure db
-db = yaml.safe_load(open('db.yaml'))
-app.config['MYSQL_HOST'] = db['mysql_host']
-app.config['MYSQL_USER'] = db['mysql_user']
-app.config['MYSQL_PASSWORD'] = db['mysql_password']
-app.config['MYSQL_DB'] = db['mysql_db']
-
-mysql = MySQL(app) 
 
 @app.route('/')
 def home():
@@ -26,25 +14,46 @@ def top():
 def about():
     return render_template("about.html")
 
-@app.route('/stats', methods = ['GET', 'POST'])
+@app.route('/stats')
 def stats():
-    if request.method == 'POST':
-        userDetails = request.form
-        name = userDetails['name']
-        email = userDetails['email']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users(name, email) VALUES(%s, %s)", (name, email))
-        mysql.connection.commit()
-        cur.close()
-        return 'success'
     return render_template("stats.html")
 
 @app.route('/sports')
 def sports():
     return render_template("sports.html")
 
+# Database connection info. Note that this is not a secure connection.
+#app.config['MYSQL_DATABASE_USER'] = 'root'
+#app.config['MYSQL_DATABASE_PASSWORD'] = 'root'
+#app.config['MYSQL_DATABASE_DB'] = 'LibraryDB'
+#app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
+#mysql = MySQL()
+#mysql.init_app(app)
+#conn = mysql.connect()
+#cursor = conn.cursor()
+
+#endpoint for search
+#@app.route('/search', methods=['GET', 'POST'])
+#def search():
+    if request.method == "POST":
+        book = request.form['book']
+        # search by author or book
+        cursor.execute("SELECT name, author from Book WHERE name LIKE %s OR author LIKE %s", (book, book))
+        conn.commit()
+        data = cursor.fetchall()
+        # all in the search box will return all the tuples
+        if len(data) == 0 and book == 'all': 
+            cursor.execute("SELECT name, author from Book")
+            conn.commit()
+            data = cursor.fetchall()
+        return render_template('search.html', data=data)
+    return render_template('search.html')
+
+
 if __name__ == "__main__":
     app.run(debug=True)
+
 
 
 # pip install Flask
