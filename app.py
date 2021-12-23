@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, request, jsonify
 import pymysql
 pymysql.install_as_MySQLdb()
 import MySQLdb
-db = MySQLdb.connect(host= "localhost", user="root", passwd="Samahita0")
+db = MySQLdb.connect(host= "localhost", user="root", passwd="Samahita0") #Replace 'Samahita0' with the sql password
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -11,7 +11,7 @@ app.secret_key = "caircocoders-ednalan"
         
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Samahita0'
+app.config['MYSQL_PASSWORD'] = 'Samahita0' #Replace 'Samahita0' with the sql password
 app.config['MYSQL_DB'] = 'testingdb'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)

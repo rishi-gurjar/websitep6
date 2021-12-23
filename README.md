@@ -7,6 +7,9 @@
 1. First, install Flask, heres the [tutorial](https://www.digitalocean.com/community/tutorials/how-to-create-your-first-web-application-using-flask-and-python-3)
 2. Once Flask is downloaded, go to the *app.py* page in this repository and open Terminal
 3. Input 'export FLASK_APP=hello' and then 'export FLASK_ENV=development' and finally 'flask run'
+4. Use the SQL script in 'file.sql' to set up the database. 
+5. Replace the passwords, usernames, and hosts found in 'app.py' to configure the DB
+
 
 The Flask environment should be loading, and just input the link given into your browser and run!
 Here is the link that I recieved: 'http://127.0.0.1:5000/'
